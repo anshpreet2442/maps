@@ -1,1 +1,588 @@
-<h1>Google Maps Js<>/h1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Google Maps Embed Code Generator | Anshpreet</title>
+<!-- Meta -->
+<meta name="description" content="Embedista is your top resource for Google Maps iframe generation. Create, customize, and embed Google Maps into your website swiftly and securely." />
+<meta name="author" content="Embedista">
+<!-- Open Graph -->
+<meta name="og:title" content="Google Maps Embed Code Generator | Embedista">
+<meta name="og:description" content="Elevate your website experience with our specialized Google Maps embed code generator. Create tailored Google Maps iframe codes effortlessly.">
+<meta name="og:image" content="https://www.anshpreet.com/imgs/logo.png">
+<meta name="og:url" content="https://www.anshpreet.com/googlemapsembed">
+<meta name="og:site_name" content="Embedista">
+<meta name="og:type" content="website">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Google Maps Embed Code Generator | Embedista">
+<meta name="twitter:description" content="Revolutionize your website's navigation experience with our Google Maps embed code generator. Generate and embed customized Google Maps iframes with Anshpreet">
+<meta name="twitter:site" content="@embedista">
+<meta name="twitter:image:src" content="https://cdn-icons-png.flaticon.com/256/7496/7496766.png">
+<link rel="canonical" href="https://www.anshpreet.com/googlemapsembed" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn-icons-png.flaticon.com/256/7496/7496821.png">
+<link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/256/11796/11796135.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/256/4968/4968445.png" sizes="16x16">
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/256/7565/7565161.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://www.embedista.com/css/fonts.css">
+  <link rel="stylesheet" type="text/css" href="https://www.embedista.com/css/general.scss/general.css">
+  <link rel="stylesheet" type="text/css" href="https://www.embedista.com/css/fbButtons.scss/fbButtons.css">
+
+</head>
+<body>
+  <!-- header -->
+  <header>
+    <div class="hd_element">
+      <div class="logo_company">
+        <a href="/">Anshpreet.com</a>
+      </div>
+
+    </div>
+  </header>
+<style>
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.left-form,
+.map-preview {
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.default-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.default-btn:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+    .modal-content {
+  width: 400px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.close {
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding-top: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #66afe9;
+}
+
+.default-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.default-btn:hover {
+  background-color: #0056b3;
+}
+
+.selectAll {
+  padding-left: 20px;
+  background-image: url('select-icon.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+
+    </style>
+  <style>
+ .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+textarea.generated-code {
+    width: 100%;
+    height: 100px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #66b290; /* Blue border */
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+h2 {
+    color: #66b290; /* Blue header */
+}
+
+button {
+    margin-top: 10px;
+    background-color: #1a73e8; /* Blue background */
+    color: #ffffff; /* White text */
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+</style>
+
+<main>
+<h1>Google Map Embed Code Generator</h1>
+  <div class="map-section">
+  <div class="container flex-container">
+    <div class="left-form">
+      <form action="https://www.embedista.com/index.php" method="get" accept-charset="utf-8">
+        <div class="form-group">
+          <label>Address</label>
+          <input type="text" name="" class="form-control map-address">
+        </div>
+        <div class="form-group">
+          <label>Map Type</label>
+          <select id="myDropdown" class="custom-select map-type">
+            <option value="">Roadmap</option>
+            <option value="k">Satellite</option>
+            <option value="h">Hybrid</option>
+            <option value="p">Terrain</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Zoom</label>
+                  <select id="myDropdown" class="custom-select map-zoom">
+                   <option value="21"> 2.5 m</option>
+                                    <option value="20"> 5 m</option>
+                                    <option value="19"> 10 m</option>
+                                    <option value="18"> 20 m</option>
+                                    <option value="17"> 50 m</option>
+                                    <option value="16"> 100 m</option>
+                                    <option value="15"> 200 m</option>
+                                    <option value="14"> 400 m</option>
+                                    <option value="13"> 1 km</option>
+                                    <option value="12"> 2 km</option>
+                                    <option value="11"> 4 km</option>
+                                    <option value="10" selected="selected"> 8 km</option>
+                                    <option value="9"> 15 km</option>
+                                    <option value="8"> 30 km</option>
+                                    <option value="7"> 50 km</option>
+                                    <option value="6"> 100 km</option>
+                                    <option value="5"> 200 km</option>
+                                    <option value="4"> 400 km</option>
+                                    <option value="3"> 1000 km</option>
+                                    <option value="2"> 2000 km</option>
+
+                    </select>
+
+        </div>
+          <div class="form-group">
+          <label>Width</label>
+          <input type="text" name="" class="form-control map-width" value="600">
+        </div>
+        <div class="form-group">
+          <label>Height</label>
+          <input type="text" name="" class="form-control map-height" value="400">
+        </div>
+        <div class="form-group">
+          <button type="button" class="preview-btn default-btn">Generate my code</button>
+        </div>
+      </form>
+    </div>
+    <div class="map-preview">
+      <div class="loader-gif">
+        <img src="https://www.embedista.com/loader.gif" alt="">
+      </div>
+      <div class="map-iframe">
+        <iframe src="" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Generated Code</h2>
+            <textarea class="generated-code" readonly></textarea>
+      <button class="copy-btn">Copy</button>
+        <button class="select-all-btn">Select All</button>
+        </div>
+    </div>
+  <div class="cont_full">
+  <style>
+  .box-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+    background: #f4f4f4;
+  }
+
+  .box:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transform: scale(1.05);
+  }
+
+  .box a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+</style>
+
+</main>
+<!-- end of main container mark up -->
+  <div id="em_bed">
+    <div class="embed_b"></div>
+    <div class="mn_embed">
+      <div class="main_el_em">
+        <div class="exit_embed"></div>
+        <div class="two_ins_of_embed">
+          <h4>em_bed iframe</h4>
+          <div class="fx_sz">
+            <div class="two_ins">
+              <textarea type="text" name="gif" id="fx_embed_element" readonly></textarea>
+              <button id="fx" class="cp_embed_button">copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- footer mark up -->
+<footer>
+  <div class="in_bel_content_footer">
+    <div class="in_bel_content_bel_content_footer_upper">
+      <div class="bel_content_bel_content_footer_logo_social">
+        <div class="bel_content_bel_content_footer_logo"><a href="/">Anshpreet</a></div>
+      </div>
+      <div class="bel_content_bel_content_footer_menus">
+
+
+
+
+      </div>
+    </div>
+    <div class="in_bel_content_bel_content_footer_below">
+      <a href="/">Anshpreet - 2024</a>
+      <a rel="nofollow" href="/privacy">Privacy policy</a>
+      <a rel="nofollow" href="/contact">Contact</a>
+      <a rel="nofollow" href="/cookies">Cookies</a>
+    </div>
+  </div>
+</footer>
+     <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                           <div class="modal-header">
+                            <span class="close">&times;</span>
+
+                          </div>
+                        <div class="modal-body">
+
+                             <div class="form-group">
+                               <input type="text" name="" class="form-control map-value">
+                             </div>
+                            <div class="form-group">
+                              <button type="buttoon" class="default-btn selectAll">Click Here and Press Ctrl + C</button>
+                            </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+                    <!--end modal-->
+<script type="text/javascript" src="https://www.embedista.com/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="https://www.embedista.com/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="https://www.embedista.com//js/plugin.js"></script>
+  <script>
+     $(document).ready(function() {
+  var currentTime = new Date().getTime();
+
+  Date.prototype.addHours = function(h) {
+    this.setTime(this.getTime() + h * 60 * 60 * 1000);
+    return this;
+  };
+
+  var after24 = new Date().addHours(10).getTime();
+
+  $('.btn-info').click(function() {
+    $('.cookies-content').hide();
+    localStorage.setItem('desiredTime', after24);
+  });
+
+  if (localStorage.getItem('desiredTime') >= currentTime) {
+    $('.cookies-content').hide();
+  } else {
+    $('.cookies-content').show();
+  }
+
+  $('.dropdown-toggle').click(function() {
+    $(this).next('.dropdown-menu').slideToggle();
+  });
+
+  $('.resp-menu').click(function() {
+    $('.menu').toggleClass('d-flex');
+  });
+
+  $('#currentProjects').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    responsive: {
+      0: {
+        items: 2
+      },
+      600: {
+        items: 3
+      },
+      1200: {
+        items: 5
+      }
+    }
+  });
+
+  $('#VideoCarousel').owlCarousel({
+    loop: true,
+    margin: 15,
+    nav: true,
+    dots: false,
+    autoplay: false,
+    responsive: {
+      0: {
+        items: 2
+      },
+      600: {
+        items: 3
+      },
+      1200: {
+        items: 4
+      }
+    }
+  });
+
+  // Dropdown toggle
+  $('.dropdown-toggle').click(function() {
+    $(this).next('.dropdown').slideToggle();
+  });
+
+  $(document).click(function(e) {
+    var target = e.target;
+    if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) {
+      $('.dropdown').hide();
+    }
+  });
+
+  function getMapParams() {
+    var mapTitle = $('.map-title').val();
+    var mapAddress = $('.map-address').val();
+    var mapType = $('.map-type').val();
+    var mapZoom = $('.map-zoom').val();
+    var mapWidth = $('.map-width').val();
+    var mapHeight = $('.map-height').val();
+    var html =
+      '<iframe src="https://maps.google.com/maps?hl=en&q=' +
+      mapAddress +
+      '(Title)&ie=UTF8&t=' +
+      mapType +
+      '&z=' +
+      mapZoom +
+      '&iwloc=B&output=embed" width="' +
+      mapWidth +
+      '" height="' +
+      mapHeight +
+      '" frameborder="0" style="border:0;" allowfullscreen=""></iframe>';
+
+    $('.map-iframe').html(html);
+
+    setTimeout(function() {
+      $('.loader-gif').hide();
+      $('.map-iframe').show();
+    }, 300);
+  }
+
+$('.map-address, .map-width, .map-height, .map-type, .map-zoom').on('keyup change', function() {
+    $('.map-iframe').hide();
+    $('.loader-gif').show();
+    getMapParams();
+  });
+
+// Modal
+var modal = $("#myModal");
+
+$('.preview-btn').click(function() {
+    var mapTitle = $('.map-title').val();
+    var mapAddress = $('.map-address').val();
+    var mapType = $('.map-type').val();
+    var mapZoom = $('.map-zoom').val();
+    var mapWidth = $('.map-width').val();
+    var mapHeight = $('.map-height').val();
+    var html =
+      '<div style="overflow:hidden;width: 700px;position: relative;"><iframe width="' +
+      mapWidth +
+      '" height="' +
+      mapHeight +
+      '" src="https://maps.google.com/maps?hl=en&amp;q=' +
+      mapAddress +
+      '+(' +
+      mapTitle +
+      ')&amp;ie=UTF8&amp;t=' +
+      mapType +
+      '&amp;z=' +
+      mapZoom +
+      '&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><div style="overflow: auto; position: absolute; height: 0pt; width: 0pt;">Powered by <a href="https://www.anshpreet.com/googlemapsembed">Google Map Embed</a> Code Generator</div><script type="text/javascript" src="https://www.embedista.com/j/map.js"><\/script></div><style>.nvs{position:relative;text-align:right;height:325px;width:643px;} #gmap_canvas img{max-width:none!important;background:none!important}</style></div>';
+
+    $('.generated-code').val(html);
+    modal.fadeIn();
+  });
+
+$('.selectAll').click(function() {
+    $('.generated-code').select();
+  });
+
+$("#myModal .close").click(function() {
+    modal.fadeOut();
+  });
+
+$(window).click(function(e) {
+    if (e.target.id === 'myModal') {
+      modal.fadeOut();
+    }
+});
+
+$('.copy-btn').click(function() {
+    var copyText = $('.generated-code');
+    copyText.select();
+    document.execCommand("copy");
+    alert("Copied the text: " + copyText.val());
+});
+
+$('.select-all-btn').click(function() {
+    $('.generated-code').select();
+});
+});
+
+
+  </script>
+</body>
+</html>
